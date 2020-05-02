@@ -8,10 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/**
- *
- * @author A.Khalaev
- */
+
 public class PropertyManager
 {
     private static Logger log = LoggerFactory.getLogger(PropertyManager.class.getSimpleName());
