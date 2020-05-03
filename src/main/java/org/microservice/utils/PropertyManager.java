@@ -1,4 +1,4 @@
-package org.microserviceCHI.utils;
+package org.microservice.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

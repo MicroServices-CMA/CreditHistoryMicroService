@@ -1,11 +1,11 @@
-package org.microserviceCHI.handlers;
+package org.microservice.handlers;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.microserviceCHI.model.Answer;
-import org.microserviceCHI.model.Item;
-import org.microserviceCHI.model.Request;
-import org.microserviceCHI.utils.Common;
+import org.microservice.model.Answer;
+import org.microservice.model.Item;
+import org.microservice.model.Request;
+import org.microservice.utils.Common;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class MainServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        String reqStr = IOUtils.toString(req.getInputStream());
+        String reqStr = IOUtils.toString(req.getInputStream(), "UTF-8");
         if(StringUtils.isBlank(reqStr))
         {
             resp.setContentType("application/json");
@@ -35,6 +35,7 @@ public class MainServlet extends HttpServlet
         resp.getWriter().println(Common.getPrettyGson().toJson(new Answer("OK", items)));
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         response.setContentType("application/json");

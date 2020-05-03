@@ -1,17 +1,17 @@
-package org.microserviceCHI.model;
+package org.microservice.model;
 import java.util.Date;
 
 public class Repayment
 {
     int id;
-    int id_order;
+    int orderId;
     Date date;
     double sum;
 
-    public Repayment(int id, int id_order, Date date, double sum)
+    public Repayment(int id, int orderId, Date date, double sum)
     {
         this.id = id;
-        this.id_order = id_order;
+        this.orderId = orderId;
         this.date = date;
         this.sum = sum;
     }
@@ -23,7 +23,7 @@ public class Repayment
 
     public void setIdOrder(int id_order)
     {
-        this.id_order = id_order;
+        this.orderId = orderId;
     }
 
     public void setSum(double sum)
@@ -43,7 +43,7 @@ public class Repayment
 
     public int getIdOrder()
     {
-        return id_order;
+        return orderId;
     }
 
 

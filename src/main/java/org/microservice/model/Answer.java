@@ -1,4 +1,4 @@
-package org.microserviceCHI.model;
+package org.microservice.model;
 
 import java.util.List;
 

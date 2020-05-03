@@ -1,4 +1,4 @@
-package org.microserviceCHI.utils;
+package org.microservice.utils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

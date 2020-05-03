@@ -1,12 +1,12 @@
-package org.microserviceCHI;
+package org.microservice;
 
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
-import org.microserviceCHI.handlers.MainServlet;
-import org.microserviceCHI.utils.Common;
-import org.microserviceCHI.utils.PropertyManager;
+import org.microservice.handlers.MainServlet;
+import org.microservice.utils.Common;
+import org.microservice.utils.PropertyManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +18,7 @@ public class Main
 
     public static void main(String[] args) throws Exception
     {
+
         PropertyManager.load();
         Common.configure();
         runServer();
@@ -29,6 +30,7 @@ public class Main
 
             }
         },"Stop Jetty Hook"));
+
     }
 
     private static void runServer() {
