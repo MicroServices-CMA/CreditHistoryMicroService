@@ -25,12 +25,12 @@ public class Order
         this.id = id;
     }
 
-    public void setIdClient(int clientId)
+    public void setClientId(int clientId)
     {
         this.clientId = clientId;
     }
 
-    public void setIdBank(int bankId)
+    public void setBankId(int bankId)
     {
         this.bankId = bankId;
     }
@@ -54,12 +54,12 @@ public class Order
         return id;
     }
 
-    public int getIdClient()
+    public int getClientId()
     {
         return clientId;
     }
 
-    public int getIdBank()
+    public int getBankId()
     {
         return bankId;
     }

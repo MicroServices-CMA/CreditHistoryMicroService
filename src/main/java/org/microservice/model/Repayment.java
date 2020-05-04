@@ -21,7 +21,7 @@ public class Repayment
         this.id = id;
     }
 
-    public void setIdOrder(int id_order)
+    public void setIdOrder(int orderId)
     {
         this.orderId = orderId;
     }
