@@ -5,12 +5,12 @@ import java.util.List;
 public class Answer
 {
     private String status;
-    private List<Item> items;
+    private List<History> histories;
 
-    public Answer(String status, List<Item> items)
+    public Answer(String status, List<History> histories)
     {
         this.status = status;
-        this.items = items;
+        this.histories = histories;
     }
 
     public String getStatus()
@@ -23,13 +23,13 @@ public class Answer
         this.status = status;
     }
 
-    public List<Item> getItems()
+    public List<History> getItems()
     {
-        return items;
+        return histories;
     }
 
-    public void setItems(List<Item> items)
+    public void setItems(List<History> items)
     {
-        this.items = items;
+        this.histories = items;
     }
 }

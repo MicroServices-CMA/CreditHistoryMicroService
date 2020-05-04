@@ -2,7 +2,9 @@ package org.microservice.handlers;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.microservice.chi.HistoryRequester;
 import org.microservice.model.Answer;
+import org.microservice.model.History;
 import org.microservice.model.Item;
 import org.microservice.model.Request;
 import org.microservice.utils.Common;
@@ -31,16 +33,19 @@ public class MainServlet extends HttpServlet
         Request r = Common.getPrettyGson().fromJson(reqStr, Request.class);
         resp.setContentType("application/json");
         resp.setStatus(HttpServletResponse.SC_OK);
-        List<Item> items = Arrays.asList(new Item("First", r.getName()));
-        resp.getWriter().println(Common.getPrettyGson().toJson(new Answer("OK", items)));
+       // List<History> items = Arrays.asList(new Item("First", r.getName()));
+        resp.getWriter().println(Common.getPrettyGson().toJson(new Answer("OK", null)));
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        int clientId = Integer.parseInt(request.getParameterValues("id")[0]);
+        HistoryRequester historyRequester = new HistoryRequester();
+        List<History> histories = historyRequester.getHistory(clientId);
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_OK);
-        Answer answer = new Answer("OK", null);
+        Answer answer = new Answer("OK", histories);
         response.getWriter().println(Common.getPrettyGson().toJson(answer));
     }
 

@@ -27,7 +27,7 @@ public class HistoryRequester implements CreditHistory
                 sumPay += rep.getSum();
                 payList.add(new Pay (rep.getDate(), rep.getSum()));
             }
-            History history = new History(order.getId(), nameBank, order.getSum(), order.getDate(), payList, order.getSum()-sumPay);
+            History history = new History(order.getId(), nameBank, order.getSum(), order.getDate(), order.getTime(), payList, order.getSum()-sumPay);
             histories.add(history);
         }
 

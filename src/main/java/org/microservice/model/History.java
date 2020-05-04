@@ -9,14 +9,16 @@ public class History
     String nameBank;
     double sum;
     Date date;
+    int time;
     List<Pay> pays;
     double debt;
 
-    public History(int orderId, String nameBank, double sum, Date date, List<Pay> pays, double debt) {
+    public History(int orderId, String nameBank, double sum, Date date, int time, List<Pay> pays, double debt) {
         this.orderId = orderId;
         this.nameBank = nameBank;
         this.sum = sum;
         this.date = date;
+        this.time = time;
         this.pays = pays;
         this.debt = debt;
     }
@@ -51,6 +53,14 @@ public class History
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
     }
 
     public List<Pay> getPays() {
