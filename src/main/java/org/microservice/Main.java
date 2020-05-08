@@ -47,7 +47,7 @@ public class Main
         ServletHandler handler = new ServletHandler();
         server.setHandler(handler);
 
-        handler.addServletWithMapping(MainServlet.class, "/path");
+        handler.addServletWithMapping(MainServlet.class, "/creditHistory");
         handler.addServletWithMapping(HeartbeatServlet.class, "/heart");
         try
         {

@@ -1,0 +1,84 @@
+{
+  "banks": [
+    {
+      "id": 1,
+      "name": "Bank1"
+    },
+    {
+      "id": 2,
+      "name": "Bank2"
+    },
+    {
+      "id": 3,
+      "name": "Bank3"
+    },
+    {
+      "id": 4,
+      "name": "Bank4"
+    },
+    {
+      "id": 5,
+      "name": "Bank5"
+    },
+    {
+      "id": 6,
+      "name": "Bank6"
+    },
+    {
+      "id": 7,
+      "name": "Bank7"
+    },
+    {
+      "id": 8,
+      "name": "Bank8"
+    },
+    {
+      "id": 9,
+      "name": "Bank9"
+    },
+    {
+      "id": 10,
+      "name": "Bank10"
+    },
+    {
+      "id": 11,
+      "name": "Bank11"
+    },
+    {
+      "id": 12,
+      "name": "Bank12"
+    },
+    {
+      "id": 13,
+      "name": "Bank13"
+    },
+    {
+      "id": 14,
+      "name": "Bank14"
+    },
+    {
+      "id": 15,
+      "name": "Bank15"
+    },
+    {
+      "id": 16,
+      "name": "Bank16"
+    },
+    {
+      "id": 17,
+      "name": "Bank17"
+    },
+    {
+      "id": 18,
+      "name": "Bank18"
+    },
+    {
+      "id": 19,
+      "name": "Bank19"
+    },
+    {
+      "id": 20,
+      "name": "Bank20"
+    }
+  ]
+}
