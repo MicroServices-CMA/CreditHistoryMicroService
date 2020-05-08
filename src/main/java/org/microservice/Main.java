@@ -4,6 +4,7 @@ package org.microservice;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
+import org.microservice.handlers.HeartbeatServlet;
 import org.microservice.handlers.MainServlet;
 import org.microservice.utils.Common;
 import org.microservice.utils.PropertyManager;
@@ -47,12 +48,11 @@ public class Main
         server.setHandler(handler);
 
         handler.addServletWithMapping(MainServlet.class, "/path");
-
+        handler.addServletWithMapping(HeartbeatServlet.class, "/heart");
         try
         {
             server.start();
             log.error("Server has started at port: " + port);
-            //server.join();
         }catch(Throwable t){
             log.error("Error while starting server", t);
         }

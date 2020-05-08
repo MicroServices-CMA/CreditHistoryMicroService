@@ -6,10 +6,9 @@ import org.microservice.utils.Common;
 import org.microservice.utils.PropertyManager;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.List;
 
-public class TxtWorker implements Fileling
+public class TxtWorker implements FileProcessor
 {
     @Override
     public List<Bank> getBanks() throws IOException

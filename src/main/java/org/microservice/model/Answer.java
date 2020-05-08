@@ -2,15 +2,15 @@ package org.microservice.model;
 
 import java.util.List;
 
-public class Answer
+public class Answer<T>
 {
     private String status;
-    private List<History> histories;
+    private List<T> items;
 
-    public Answer(String status, List<History> histories)
+    public Answer(String status, List<T> histories)
     {
         this.status = status;
-        this.histories = histories;
+        this.items = histories;
     }
 
     public String getStatus()
@@ -23,13 +23,13 @@ public class Answer
         this.status = status;
     }
 
-    public List<History> getItems()
+    public List<T> getItems()
     {
-        return histories;
+        return items;
     }
 
-    public void setItems(List<History> items)
+    public void setItems(List<T> items)
     {
-        this.histories = items;
+        this.items = items;
     }
 }

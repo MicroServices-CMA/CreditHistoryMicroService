@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-public interface Fileling
+public interface FileProcessor
 {
     List<Bank> getBanks() throws IOException;
     List<Order> getOrders() throws IOException;

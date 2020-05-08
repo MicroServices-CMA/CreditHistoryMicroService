@@ -12,7 +12,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ChiGeneration
+public class CreditHistoryGeneration
 {
     static void BankGeneration() throws IOException {
         BankList bankList = new BankList();
