@@ -27,7 +27,7 @@ public class MainServlet extends HttpServlet
                 response.setContentType("application/json");
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().println(Common.getPrettyGson().toJson(
-                        new Answer("BAD_REQUEST", "No clientId provided", null)));
+                        new Answer("BAD_REQUEST", "No id provided", null)));
 
                 return;
             }
