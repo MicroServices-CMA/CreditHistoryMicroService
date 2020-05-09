@@ -19,7 +19,6 @@ public class ChiGenerationTest
             CreditHistoryGeneration.BankGeneration();
             FileProcessor txt = new TxtWorker();
             List<Bank> bankList = txt.getBanks();
-            int a=3;
         } catch (IOException e) {
             e.printStackTrace();
         }
