@@ -1,4 +1,4 @@
-package org.microservice.chi;
+package org.microservice.credithistory;
 
 import org.junit.Test;
 import org.microservice.model.Bank;
@@ -20,7 +20,7 @@ public class ChiGenerationTest
             FileProcessor txt = new TxtWorker();
             List<Bank> bankList = txt.getBanks();
         } catch (IOException e) {
-            e.printStackTrace();
+            org.junit.Assert.fail(e.getMessage());
         }
     }
 
@@ -31,9 +31,8 @@ public class ChiGenerationTest
             CreditHistoryGeneration.OrderGeneration();
             FileProcessor txt = new TxtWorker();
             List<Order> orderList = txt.getOrders();
-            int a=3;
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            org.junit.Assert.fail(e.getMessage());
         }
     }
 
@@ -46,7 +45,7 @@ public class ChiGenerationTest
             List<Repayment> repaymentList = txt.getRepayments();
             int a=3;
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            org.junit.Assert.fail(e.getMessage());
         }
     }
 
@@ -57,7 +56,7 @@ public class ChiGenerationTest
             List<History> histories = historyRequester.getHistory(81);
             int a = 3;
         } catch (IOException e) {
-            e.printStackTrace();
+            org.junit.Assert.fail(e.getMessage());
         }
     }
 }

@@ -1,10 +1,9 @@
-package org.microservice.chi;
+package org.microservice.credithistory;
 
 import org.microservice.model.Bank;
 import org.microservice.model.Order;
 import org.microservice.model.Repayment;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 

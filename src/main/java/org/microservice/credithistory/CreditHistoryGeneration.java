@@ -1,11 +1,9 @@
-package org.microservice.chi;
+package org.microservice.credithistory;
 
 import org.microservice.model.*;
 import org.microservice.utils.Common;
 import org.microservice.utils.PropertyManager;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;

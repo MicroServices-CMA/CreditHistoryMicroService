@@ -1,4 +1,4 @@
-package org.microservice.chi;
+package org.microservice.credithistory;
 
 import org.apache.commons.io.IOUtils;
 import org.microservice.model.*;

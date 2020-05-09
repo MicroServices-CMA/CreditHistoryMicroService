@@ -4,17 +4,16 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.microservice.Main;
 
 import javax.servlet.http.HttpServletResponse;
 
 import static org.junit.Assert.*;
 
-public class MainServletTest {
-
+public class HeartbeatServletTest {
     @Before
     public void init()
     {
@@ -24,11 +23,11 @@ public class MainServletTest {
     @Test
     public void doGet() throws Exception
     {
-        String url = "http://localhost:8500/creditHistory?id=81";
+        String url = "http://localhost:8500/heart";
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);
-        org.junit.Assert.assertEquals(HttpServletResponse.SC_FOUND, response.getStatusLine().getStatusCode());
+        org.junit.Assert.assertEquals(HttpServletResponse.SC_OK, response.getStatusLine().getStatusCode());
     }
 
     @After
@@ -36,5 +35,4 @@ public class MainServletTest {
     {
         Main.stopServer();
     }
-
 }
