@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 public class Main
 {
-    private static Logger log = LoggerFactory.getLogger(Main.class.getSimpleName());
+    private static Logger logMain = LoggerFactory.getLogger(Main.class.getSimpleName());
 
     private static Server server;
 
@@ -34,7 +34,7 @@ public class Main
 
     }
 
-    private static void runServer() {
+    public static void runServer() {
         int port = PropertyManager.getPropertyAsInteger("server.port", 8026);
         String contextStr = PropertyManager.getPropertyAsString("server.context", "server");
 
@@ -52,19 +52,19 @@ public class Main
         try
         {
             server.start();
-            log.error("Server has started at port: " + port);
+            logMain.error("Server has started at port: " + port);
         }catch(Throwable t){
-            log.error("Error while starting server", t);
+            logMain.error("Error while starting server", t);
         }
     }
 
-    private static void stopServer() {
+    public static void stopServer() {
         try {
             if(server.isRunning()){
                 server.stop();
             }
         } catch (Exception e) {
-            log.error("Error while stopping server", e);
+            logMain.error("Error while stopping server", e);
         }
     }
 

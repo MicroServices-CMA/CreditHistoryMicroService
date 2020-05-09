@@ -4,6 +4,8 @@ import org.microservice.chi.HistoryRequester;
 import org.microservice.model.Answer;
 import org.microservice.model.History;
 import org.microservice.utils.Common;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +16,17 @@ import java.util.List;
 
 public class HeartbeatServlet extends HttpServlet
 {
+    private static Logger logHeartbeatServlet = LoggerFactory.getLogger(HeartbeatServlet.class.getSimpleName());
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("application/json");
-        resp.setStatus(HttpServletResponse.SC_OK);
-        Answer answer = new Answer("OK", null);
-        resp.getWriter().println(Common.getPrettyGson().toJson(answer));
+        try {
+            resp.setContentType("application/json");
+            resp.setStatus(HttpServletResponse.SC_OK);
+            Answer answer = new Answer("OK", null);
+            resp.getWriter().println(Common.getPrettyGson().toJson(answer));
+        }catch (Exception e)
+        {
+            logHeartbeatServlet.error("Error. " + e.getMessage());
+        }
     }
 }
