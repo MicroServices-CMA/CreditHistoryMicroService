@@ -58,7 +58,8 @@ public class MainServlet extends HttpServlet
         } else {
             logMainServlet.error("Empty request.");
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().println(Common.getPrettyGson().toJson("{ 'details' : 'Bad request' }"));
+            response.getWriter().println(Common.getPrettyGson().toJson(
+                    new Answer("EMPTY_REQUEST", "The request provided was empty", null)));
         }
     }
 
