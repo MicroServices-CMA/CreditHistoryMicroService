@@ -1,5 +1,6 @@
 package org.microservice.handlers;
 
+import com.google.common.primitives.Ints;
 import org.microservice.credithistory.HistoryRequester;
 import org.microservice.model.Answer;
 import org.microservice.model.History;
@@ -22,7 +23,7 @@ public class MainServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException    {
         if (request != null) {
             String id = request.getParameter("id");
-            if (id == null) {
+            if (id == null || Ints.tryParse(id)==null) {
                 logMainServlet.error("Error on id, value not provided.");
                 response.setContentType("application/json");
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

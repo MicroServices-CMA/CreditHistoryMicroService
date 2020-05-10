@@ -17,7 +17,7 @@ public class HeartbeatServletTest {
     @Before
     public void init()
     {
-        Main.runServer();
+        Main.runServer(8500, "/");
     }
 
     @Test

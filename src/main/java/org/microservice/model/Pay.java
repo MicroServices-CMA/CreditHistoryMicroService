@@ -12,6 +12,10 @@ public class Pay
         this.sum = sum;
     }
 
+    public Pay() {
+
+    }
+
     public Date getDate() {
         return (Date) date.clone();
     }

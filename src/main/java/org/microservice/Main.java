@@ -34,10 +34,9 @@ public class Main
 
     }
 
-    public static void runServer() {
-        int port = PropertyManager.getPropertyAsInteger("server.port", 8026);
-        String contextStr = PropertyManager.getPropertyAsString("server.context", "server");
 
+    public static void runServer(int port, String contextStr)
+    {
         server = new Server(port);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -48,14 +47,20 @@ public class Main
         server.setHandler(handler);
 
         handler.addServletWithMapping(MainServlet.class, "/creditHistory");
-        handler.addServletWithMapping(HeartbeatServlet.class, "/heart");
-        try
+        handler.addServletWithMapping(HeartbeatServlet.class, "/heart");try
         {
             server.start();
             logMain.error("Server has started at port: " + port);
         }catch(Throwable t){
             logMain.error("Error while starting server", t);
         }
+    }
+
+    private static void runServer() {
+        int port = PropertyManager.getPropertyAsInteger("server.port", 8500);
+        String contextStr = PropertyManager.getPropertyAsString("server.context", "/");
+
+        runServer(port, contextStr);
     }
 
     public static void stopServer() {
