@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="CreditHistoryMicroService" />
         <module name="MicroServices" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CreditHistoryMicroService" options="-Xlint:none" />
       <module name="MicroServices" options="-Xlint:none" />
     </option>
   </component>
