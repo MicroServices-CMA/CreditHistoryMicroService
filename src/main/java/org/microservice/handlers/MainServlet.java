@@ -21,14 +21,14 @@ public class MainServlet extends HttpServlet
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException    {
+        response.setContentType("application/json");
         if (request != null) {
             String id = request.getParameter("id");
             if (id == null || Ints.tryParse(id)==null) {
                 logMainServlet.error("Error on id, value not provided.");
-                response.setContentType("application/json");
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().println(Common.getPrettyGson().toJson(
-                        new Answer<History>("BAD_HISTORY_REQUEST", "No id provided", null)));
+                        new Answer("BAD_HISTORY_REQUEST", "No id provided", null)));
                 return;
             }
             try {
@@ -36,30 +36,28 @@ public class MainServlet extends HttpServlet
                 HistoryRequester historyRequester = new HistoryRequester();
                 List<History> histories = historyRequester.getHistory(clientId);
                 if (histories.size()!=0) {
-                    response.setContentType("application/json");
                     response.setStatus(HttpServletResponse.SC_OK);
                     response.getWriter().println(Common.getPrettyGson().toJson(
-                            new Answer<History>("HISTORY_FOUND", "The request was successful", histories)));
+                            new Answer("OK", "The request was successful", histories)));
                     logMainServlet.error("Object found. Provided id: " + id);
                 } else {
-                    response.setContentType("application/json");
-                    response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                    response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                     response.getWriter().println(Common.getPrettyGson().toJson(
-                            new Answer<History>("HISTORY_NOT_FOUND","Credit History Not Found", null)));
+                            new Answer("HISTORY_NOT_FOUND","Credit History Not Found", null)));
                     logMainServlet.error("Object not found. Provided id: " + id);
                 }
             } catch (Exception e) {
-                response.setContentType("application/json");
+
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 response.getWriter().println(Common.getPrettyGson().toJson(
-                        new Answer<History>("INTERNAL_HISTORY_SERVER_ERROR","An internal Error occurred on server UsersMicroService", null)));
+                        new Answer("INTERNAL_HISTORY_SERVER_ERROR","An internal Error occurred on server UsersMicroService", null)));
                 logMainServlet.error("Error. " + e.getMessage());
             }
         } else {
             logMainServlet.error("Empty request.");
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().println(Common.getPrettyGson().toJson(
-                    new Answer<History>("EMPTY_HISTORY_REQUEST", "The request provided was empty", null)));
+                    new Answer("EMPTY_HISTORY_REQUEST", "The request provided was empty", null)));
         }
     }
 

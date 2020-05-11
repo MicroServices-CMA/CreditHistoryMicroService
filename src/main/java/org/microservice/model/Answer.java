@@ -2,23 +2,23 @@ package org.microservice.model;
 
 import java.util.List;
 
-public class Answer<T>
+public class Answer
 {
     private String status;
     private String details;
-    private List<T> items;
+    private List<History> items;
 
-    public Answer(String status, String details, List<T> items) {
+    public Answer(String status, String details, List<History> items) {
         this.items = items;
         this.status = status;
         this.details = details;
     }
 
-    public List<T> getItems() {
+    public List<History> getItems() {
         return items;
     }
 
-    public void setItems(List<T> items) {
+    public void setItems(List<History> items) {
         this.items = items;
     }
 
