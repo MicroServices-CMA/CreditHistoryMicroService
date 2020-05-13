@@ -47,7 +47,8 @@ public class Main
         server.setHandler(handler);
 
         handler.addServletWithMapping(MainServlet.class, "/creditHistory");
-        handler.addServletWithMapping(HeartbeatServlet.class, "/heart");try
+        handler.addServletWithMapping(HeartbeatServlet.class, "/heart");
+        try
         {
             server.start();
             logMain.error("Server has started at port: " + port);

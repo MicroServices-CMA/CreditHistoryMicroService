@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 public class MainServletTest {
 
     @Before
-    public void init()
+    public void setUp()
     {
         Main.runServer(8500, "/");
     }
@@ -31,7 +31,7 @@ public class MainServletTest {
     @Test
     public void doGetFound() throws Exception
     {
-        String url = "http://localhost:8500/creditHistory?id=1";
+        String url = "http://localhost:8500/creditHistory?id=4";
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);
@@ -45,7 +45,7 @@ public class MainServletTest {
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);
-        org.junit.Assert.assertEquals(HttpServletResponse.SC_NO_CONTENT, response.getStatusLine().getStatusCode());
+        org.junit.Assert.assertEquals(HttpServletResponse.SC_BAD_REQUEST, response.getStatusLine().getStatusCode());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class MainServletTest {
 
 
     @After
-    public void entTest()
+    public void tearDown()
     {
         Main.stopServer();
     }
