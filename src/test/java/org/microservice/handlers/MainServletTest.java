@@ -1,24 +1,15 @@
 package org.microservice.handlers;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.microservice.Main;
-import org.microservice.model.Answer;
-import org.microservice.model.History;
-import org.microservice.utils.Common;
 
 import javax.servlet.http.HttpServletResponse;
-
-import static org.junit.Assert.*;
 
 public class MainServletTest {
 

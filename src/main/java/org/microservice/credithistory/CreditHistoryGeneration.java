@@ -31,7 +31,8 @@ public class CreditHistoryGeneration
 
         for (int i = 0; i < 20; ++i) {
             Date date = new SimpleDateFormat( "dd.MM.yyyy" ).parse( (1+i)+"."+(i%12+1)+".2020" );
-            Order order = new Order(i + 1, (int)(Math.random()*10),  1+ (int)(Math.random()*20), 10000+Math.random()*10000000, date, i+4);
+            Order order = new Order(i + 1, (int)(Math.random()*10),  1+ (int)(Math.random()*20),
+                    10000+Math.random()*10000000, date, i+4);
             orderList.getOrders().add(order);
         }
         String strJson = Common.getPrettyGson().toJson(orderList);
@@ -47,7 +48,8 @@ public class CreditHistoryGeneration
 
         for (int i = 0; i < 80; ++i) {
             int orderId = 1 + (int)(Math.random() * 20);
-            Date date = new SimpleDateFormat( "dd.MM.yyyy" ).parse( ((i+1)%5+orderId)+"."+((orderId-1)%12+1)+".2020" );
+            Date date = new SimpleDateFormat( "dd.MM.yyyy" ).parse(
+                    ((i+1)%5+orderId)+"."+((orderId-1)%12+1)+".2020" );
             Repayment repayment = new Repayment(i, orderId,  date, Math.random()*1000);
             repaymentList.getRepaymentList().add(repayment);
         }

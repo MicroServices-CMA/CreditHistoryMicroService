@@ -20,61 +20,51 @@ public class Order
         this.time = time;
     }
 
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
-    public void setClientId(int clientId)
-    {
-        this.clientId = clientId;
-    }
-
-    public void setBankId(int bankId)
-    {
-        this.bankId = bankId;
-    }
-
-    public void setSum(double sum)
-    {
-        this.sum = sum;
-    }
-    public void setDate(Date date)
-    {
-        this.date = date;
-    }
-
-    public void setTime(int time)
-    {
-        this.time = time;
-    }
-
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public int getClientId()
-    {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getClientId() {
         return clientId;
     }
 
-    public int getBankId()
-    {
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
+    }
+
+    public int getBankId() {
         return bankId;
     }
 
-    public double getSum()
-    {
+    public void setBankId(int bankId) {
+        this.bankId = bankId;
+    }
+
+    public double getSum() {
         return sum;
     }
-    public Date getDate()
-    {
+
+    public void setSum(double sum) {
+        this.sum = sum;
+    }
+
+    public Date getDate() {
         return date;
     }
 
-    public int getTime()
-    {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getTime() {
         return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
     }
 }

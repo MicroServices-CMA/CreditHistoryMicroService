@@ -16,18 +16,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
-/**
- *
- * @author A.Khalaev
- */
+
 public class Common
 {
     private static Logger log = LoggerFactory.getLogger(Common.class);

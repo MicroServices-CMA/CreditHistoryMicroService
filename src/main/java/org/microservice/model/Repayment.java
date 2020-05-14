@@ -8,6 +8,9 @@ public class Repayment
     Date date;
     double sum;
 
+    public Repayment() {
+    }
+
     public Repayment(int id, int orderId, Date date, double sum)
     {
         this.id = id;
@@ -45,8 +48,6 @@ public class Repayment
     {
         return orderId;
     }
-
-
 
     public double getSum() {
         return sum;
