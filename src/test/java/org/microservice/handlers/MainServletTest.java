@@ -36,7 +36,7 @@ public class MainServletTest {
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);
-        org.junit.Assert.assertEquals(HttpServletResponse.SC_BAD_REQUEST, response.getStatusLine().getStatusCode());
+        org.junit.Assert.assertEquals(HttpServletResponse.SC_OK, response.getStatusLine().getStatusCode());
     }
 
     @Test
