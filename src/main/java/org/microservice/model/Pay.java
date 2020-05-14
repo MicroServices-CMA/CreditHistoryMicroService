@@ -7,13 +7,13 @@ public class Pay
     Date date;
     double sum;
 
+    public Pay() {
+
+    }
+
     public Pay(Date date, double sum) {
         this.date = date;
         this.sum = sum;
-    }
-
-    public Pay() {
-
     }
 
     public Date getDate() {

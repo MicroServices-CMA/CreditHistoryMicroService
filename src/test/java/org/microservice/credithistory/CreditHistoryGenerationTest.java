@@ -5,6 +5,7 @@ import org.microservice.model.Bank;
 import org.microservice.model.History;
 import org.microservice.model.Order;
 import org.microservice.model.Repayment;
+import org.microservice.processings.FileProcessor;
 
 import java.io.IOException;
 import java.text.ParseException;

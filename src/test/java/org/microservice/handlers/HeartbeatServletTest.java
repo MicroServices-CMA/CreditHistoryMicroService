@@ -11,8 +11,6 @@ import org.microservice.Main;
 
 import javax.servlet.http.HttpServletResponse;
 
-import static org.junit.Assert.*;
-
 public class HeartbeatServletTest {
     @Before
     public void init()

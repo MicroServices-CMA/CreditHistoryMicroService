@@ -8,6 +8,9 @@ public class Answer
     private String details;
     private List<History> items;
 
+    public Answer() {
+    }
+
     public Answer(String status, String details, List<History> items) {
         this.items = items;
         this.status = status;
